@@ -65,10 +65,10 @@ fzf-file-widget() {
   zle reset-prompt
   return $ret
 }
-zle     -N            fzf-file-widget
-bindkey -M emacs '^T' fzf-file-widget
-bindkey -M vicmd '^T' fzf-file-widget
-bindkey -M viins '^T' fzf-file-widget
+zle     -N                               fzf-file-widget
+bindkey -N emacs ${FZF_CTRL_T_KEY:-'^T'} fzf-file-widget
+bindkey -M vicmd ${FZF_CTRL_T_KEY:-'^T'} fzf-file-widget
+bindkey -M viins ${FZF_CTRL_T_KEY:-'^T'} fzf-file-widget
 
 # ALT-C - cd into the selected directory
 fzf-cd-widget() {
